@@ -5,7 +5,7 @@ int top;
 FILE* fp3,*fp4,*fp5,*fp6 ;
 int ch,ele,num,val;
 void push(int ele);
-void pop();
+void pop(int );
 int is_empty(int);
 int is_full(int);
 int peek(int);
@@ -20,10 +20,12 @@ int main()
     top=-1;
     time_t t;
     int n,i;
-
+    fprintf(fp4,"PUSHED ELEMENTS\n");
+    fprintf(fp5,"POPED ELEMENTS\n");
     srand((unsigned) time(&t));
     printf("Enter the element\n");
         scanf("%d",&n);
+        int p=n;
         int ar2[n];
         for(i=0;i<n;i++)
     {
@@ -62,7 +64,7 @@ int main()
                        if(n!=0)
                        {
                             fscanf(fp3,"%d",&ele);
-                       push(ele);
+                            push(ele);
                        fprintf(fp4,"%d\n",ele);
                        fprintf(fp6,"PUSH\n");
                        n--;
@@ -77,16 +79,23 @@ int main()
 
                    }
                    break;
-            case 2 : if(n!=0)
-            {
-                pop();
-                n--;
-            }
-            else
+            case 2 :
+                if(n!=0)
                        {
-                           printf("ALL THE ELEMENTS HAS BEEN POPED\n");
-                           fprintf(fp6,"ALL THE ELEMENTS HAS BEEN POPED\n");
+
+                     fscanf(fp3,"%d",&ele);
+                      pop(ele);
+                       n--;
                        }
+                        else
+                       {
+                           printf(" THE ELEMENTS HAS BEEN POPED\n");
+                           fprintf(fp6," THE ELEMENTS HAS BEEN POPED\n");
+
+                       }
+
+
+
 
                    break;
             case 3 : display();
@@ -133,7 +142,7 @@ void push(int ele)
 
 
 
-void pop()
+void pop(int ele)
 {
     if(top==-1)
     {
@@ -141,7 +150,7 @@ void pop()
     }
     else
     {
-        fscanf(fp3,"%d\n",&ele);
+
         fprintf(fp5,"%d\n",ele);
         top--;
         fprintf(fp6,"POP\n");
