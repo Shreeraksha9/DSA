@@ -15,8 +15,8 @@ int main()
 
      fp3=fopen("raksha.txt","w");
      fp4=fopen("hello.txt","w");
-     fp5=fopen("om.txt","w");
-     fp6=fopen("vastrad.txt","w");
+     fp5=fopen("abc.txt","w");
+     fp6=fopen("bcd.txt","w");
     top=-1;
     time_t t;
     int n,i;
